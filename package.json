@@ -31,7 +31,7 @@
     "copy-to-dist": "cp -r ./public/* ./dist/",
     "set-dist": "npm run clean-dist && npm run copy-to-dist",
     "build:prod": "export NODE_ENV=production && npm run clean-dist && npm run build && npm run server",
-    "heroku-prebuild": "npm run set-dist",
+    "heroku-prebuild": "npm run clean-dist",
     "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
