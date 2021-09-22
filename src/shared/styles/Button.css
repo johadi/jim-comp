@@ -17,3 +17,7 @@
     background-color: #9c842e;
     border: solid #9c842e 1px;
 }
+
+button[disabled] {
+    opacity: 0.7;
+}

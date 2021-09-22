@@ -8,13 +8,16 @@ const FilesUpload = ({updateReport}) => {
     const file1Ref = useRef(null);
     const file2Ref = useRef(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleCompare = async () => {
+        setLoading(true);
         const file1 = file1Ref.current.files[0];
         const file2 = file2Ref.current.files[0];
         if(!file1 || !file2) {
-            setError('All fields are required!');
+            setError('You must select both files for comparison!');
             updateReport('', '', null);
+            setLoading(false);
             return;
         }
 
@@ -34,6 +37,8 @@ const FilesUpload = ({updateReport}) => {
             }
 
             setError('Something went wrong. Try again.')
+        } finally {
+            setLoading(false);
         }
 
     }
@@ -53,7 +58,9 @@ const FilesUpload = ({updateReport}) => {
                         <input id="file2" name="file2" type="file" ref={file2Ref} />
                     </div>
                     <div className="button-wrapper">
-                        <Button large="true" onClick={handleCompare}>Compare files</Button>
+                        <Button disabled={loading} large="true" onClick={handleCompare}>
+                            {loading ? 'Comparing files...': 'Compare files'}
+                        </Button>
                     </div>
                 </div>
             </section>
