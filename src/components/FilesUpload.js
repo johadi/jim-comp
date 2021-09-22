@@ -23,7 +23,7 @@ const FilesUpload = ({updateReport}) => {
         formData.append('file2', file2);
 
         try {
-            const response = await axios.post('http://localhost:5000/upload', formData);
+            const response = await axios.post('/api/upload', formData);
             setError(null);
             updateReport(file1.name, file2.name, response.data);
         } catch (error) {

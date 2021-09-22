@@ -23,6 +23,9 @@ function App() {
         prevViewHeight.current = elementRef.current.clientHeight;
         setFileNames({file1: file1Name, file2: file2Name});
         setReport(filesReport);
+        if(!filesReport) {
+            setShowUnmatchedReport(false);
+        }
     }
 
     const handleUnmatchedReports = () => {
