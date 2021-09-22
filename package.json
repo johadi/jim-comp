@@ -21,16 +21,16 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "server": "node ./bin/www",
+    "start": "node ./bin/www",
     "server:dev": "nodemon ./bin/www",
-    "start": "react-scripts start",
+    "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean-dist": "rm -rf ./build",
     "copy-to-dist": "cp -r ./public/* ./dist/",
     "set-dist": "npm run clean-dist && npm run copy-to-dist",
-    "build:prod": "export NODE_ENV=production && npm run clean-dist && npm run build && npm run server",
+    "build:prod": "export NODE_ENV=production && npm run clean-dist && npm run build && npm run start",
     "heroku-prebuild": "npm run clean-dist",
     "heroku-postbuild": "npm run build"
   },
