@@ -1,0 +1,19 @@
+.btn {
+    padding: 10px;
+    background-color: #265f20;
+    color: white;
+    outline: none;
+    border: #265F20FF 1px solid;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.btn-large {
+    width: 100%;
+}
+
+.btn-hide {
+    background-color: #9c842e;
+    border: solid #9c842e 1px;
+}

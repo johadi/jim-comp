@@ -1,0 +1,85 @@
+.backdrop {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.modal {
+    display: none;
+    width: 65%;
+    max-width: 80%;
+    max-height: 85%;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 10%;
+    left: 17.5%;
+    z-index: 20;
+    overflow: auto;
+}
+
+.modal-close {
+    text-align: right;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.modal .close {
+    padding: 0.2rem .5rem;
+    outline: none;
+    border: #9c842e 1px solid;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.modal .close:hover {
+    border: #9c842e 1px solid;
+    background-color: #9c842e;
+    color: white;
+    font-weight: bold;
+}
+
+.modal-header {
+    text-align: center;
+    color: green;
+    padding: 0;
+    margin-top: 0;
+}
+
+.modal a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    background-color: green;
+    color: white;
+}
+
+.modal-content {
+    overflow: auto;
+}
+
+.open {
+    display: block !important;
+}
+
+
+@media (max-width: 40rem) {
+    .modal {
+        display: none;
+        width: 100%;
+        left: unset;
+    }
+}

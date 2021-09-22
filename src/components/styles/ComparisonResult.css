@@ -1,0 +1,55 @@
+.result-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.result-wrapper .report {
+    border: 1px solid green;
+    border-radius: 6px;
+    width: 28rem;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.result-section {
+    padding-bottom: 1rem;
+}
+
+.result-section .button-wrapper {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+@media (max-width: 48rem) {
+
+    .result-wrapper .report {
+        width: 19rem;
+    }
+}
+
+@media (max-width: 40rem) {
+
+    .text-filename {
+        font-size: 15px;
+    }
+
+    .result-wrapper {
+        flex-direction: column;
+
+        padding-right: 0.1rem;
+        padding-left: 0.1rem;
+    }
+
+
+    .result-wrapper .report {
+        width: initial;
+    }
+}
+
+@media (min-width: 40rem) {
+
+    .text-filename {
+        font-size: 16px;
+    }
+}
