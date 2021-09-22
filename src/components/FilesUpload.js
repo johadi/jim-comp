@@ -2,6 +2,7 @@ import {useRef, useState} from 'react';
 import './styles/FilesUpload.css';
 import {Button, Card} from "../shared";
 import axios from "axios";
+import {API_BASE_URL} from "../constants";
 
 const FilesUpload = ({updateReport}) => {
     const file1Ref = useRef(null);
@@ -22,7 +23,7 @@ const FilesUpload = ({updateReport}) => {
         formData.append('file2', file2);
 
         try {
-            const response = await axios.post('/api/upload', formData);
+            const response = await axios.post(`${API_BASE_URL}api/upload`, formData);
             setError(null);
             updateReport(file1.name, file2.name, response.data);
         } catch (error) {

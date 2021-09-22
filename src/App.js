@@ -1,9 +1,6 @@
 import {useState, useRef} from 'react';
 import {ComparisonResult, UnmatchedReport, FilesUpload} from "./components";
-// import logo from './logo.svg';
 import './styles/App.css';
-
-console.log('APP ENV =>', process.env.NODE_ENV)
 
 function App() {
     const elementRef = useRef(null);
