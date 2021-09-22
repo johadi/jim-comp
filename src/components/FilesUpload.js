@@ -11,7 +11,6 @@ const FilesUpload = ({updateReport}) => {
     const handleCompare = async () => {
         const file1 = file1Ref.current.files[0];
         const file2 = file2Ref.current.files[0];
-        console.log('Files =>', file1);
         if(!file1 || !file2) {
             setError('All fields are required!');
             updateReport('', '', null);

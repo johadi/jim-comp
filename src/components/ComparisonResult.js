@@ -26,7 +26,7 @@ const ComparisonResult = ({report, fileNames, handleUnmatchedReports, showUnmatc
                 </div>
                 <div className="button-wrapper">
                     <Button className={showUnmatchedReport ? 'btn-hide' : ''} onClick={handleUnmatchedReports}>
-                        {showUnmatchedReport ? 'Hide' : 'View'} Unmatched Report
+                        {showUnmatchedReport ? 'Hide' : 'View'} Unmatched Reports
                     </Button>
                 </div>
             </section>
