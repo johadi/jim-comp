@@ -15,7 +15,7 @@ const FilesUpload = ({updateReport}) => {
         const file1 = file1Ref.current.files[0];
         const file2 = file2Ref.current.files[0];
         if(!file1 || !file2) {
-            setError('You must select both files for comparison!');
+            setError('You must select both files for comparison.');
             updateReport('', '', null);
             setLoading(false);
             return;

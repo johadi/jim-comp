@@ -62,7 +62,6 @@ class FileService {
             totalRecords: reportFileList.length,
             totalMatchingRecords: reportFileList.length - unmatchedReports.length,
             totalUnmatchedRecords: unmatchedReports.length,
-            header: reportFileHeader,
             unmatchedRecords: unmatchedReports
         }
     }
@@ -86,12 +85,16 @@ class FileService {
     }
 
     removeFiles(file1Path, file2Path) {
-        fs.unlink(file1Path, err => {
-            if (err) console.error(err)
-        });
-        fs.unlink(file2Path, err => {
-            if (err) console.error(err)
-        });
+        if(file1Path) {
+            fs.unlink(file1Path, err => {
+                if (err) console.error(err)
+            });
+        }
+        if(file2Path) {
+            fs.unlink(file2Path, err => {
+                if (err) console.error(err)
+            });
+        }
     }
 }
 

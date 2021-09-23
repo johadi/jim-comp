@@ -18,20 +18,21 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
   },
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "npm run build && node ./bin/www",
     "server:dev": "nodemon ./bin/www",
     "client:dev": "react-scripts start",
-    "dev": "npm run build && npm start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha server/tests/**/*.test.js",
     "eject": "react-scripts eject",
     "clean-dist": "rm -rf ./build",
-    "start:prod": "export NODE_ENV=production && npm run clean-dist && npm run build && npm run start",
-    "heroku-prebuild": "npm run clean-dist",
-    "heroku-postbuild": "npm run build"
+    "start:prod": "export NODE_ENV=production && npm run clean-dist && npm run start",
+    "heroku-prebuild": "npm run clean-dist"
   },
   "eslintConfig": {
     "extends": [

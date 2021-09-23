@@ -36,9 +36,10 @@ function App() {
     return (
         <div className="App" ref={elementRef}>
             <header className="App-header">
-                <h2>FILES COMPARISON</h2>
+                <h2>Files Comparison</h2>
             </header>
             <main className="container">
+                <div className="text-success text-title">Application that compares two files and generates their reports</div>
                 <FilesUpload updateReport={updateReport}/>
                 {
                     report && (

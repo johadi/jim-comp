@@ -7,47 +7,6 @@
     overflow: auto;
 }
 
-.table-wrapper .file1-report, .unmatched-section .file2-report {
-    border: 1px solid green;
-    padding: 1rem;
-    border-radius: 6px;
-}
-
-table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-table th {
-    font-weight: bold;
-}
-
-.report-table th,.report-table td {
-    border: 1px solid #ddd;
-    padding: 0.2rem;
-}
-
-.report-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.report-title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-}
-.report-title {
-    margin: 0 0 1rem 0;
-}
-
-
 .modal-report-table {
     margin: 0 2rem 2rem 2rem;
 }
