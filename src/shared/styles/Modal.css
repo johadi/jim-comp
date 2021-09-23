@@ -39,7 +39,9 @@
 .modal .close {
     padding: 0.2rem .5rem;
     outline: none;
-    border: #9c842e 1px solid;
+    border: #187B9B 1px solid;
+    background-color: #187B9B;
+    color: white;
     cursor: pointer;
     font-weight: bold;
     border-radius: 2px;
