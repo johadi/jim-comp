@@ -10,6 +10,12 @@ const FilesUpload = ({updateReport}) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    /**
+     * function that processes the uploaded files for comparison
+     *
+     * @function handleCompare
+     * @return {void}
+     */
     const handleCompare = async () => {
         setLoading(true);
         const file1 = file1Ref.current.files[0];

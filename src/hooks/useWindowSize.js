@@ -1,5 +1,11 @@
 import {useLayoutEffect, useState} from "react";
 
+/**
+ * custom hook that gets the dimension of the user's device
+ *
+ * @function useWindowSize
+ * @return {array} array of the device size [width, height]
+ */
 export const useWindowSize = () => {
     const [size, setSize] = useState([0, 0]);
     useLayoutEffect(() => {

@@ -5,6 +5,14 @@ const fileService = require('../services/FileService');
 
 class FileController {
 
+    /**
+     * handle upload controller method
+     *
+     * @method handleUpload
+     * @param {object} req - request parameter
+     * @param {object} res - response parameter
+     * @return {object} response details
+     */
     handleUpload = async (req, res) => {
         try {
 
@@ -24,6 +32,12 @@ class FileController {
         }
     }
 
+    /**
+     * method that parses the uploaded files
+     * @method parseUploadedFiles
+     * @param {object} req - request parameter
+     * @return {object} promise
+     */
     parseUploadedFiles = async (req) => {
         return new Promise((resolve, reject) => {
             const uploadPath = path.join(__dirname, '../uploads');

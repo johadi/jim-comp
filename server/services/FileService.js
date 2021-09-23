@@ -2,6 +2,13 @@ const fs = require('fs');
 
 class FileService {
 
+    /**
+     * service method that reads file using the fs module
+     *
+     * @method readFile
+     * @param {string} filePath - filePath parameter
+     * @return {object} promise
+     */
     readFile(filePath) {
         return new Promise((resolve, reject) => {
             let fileContent = '';
@@ -18,6 +25,20 @@ class FileService {
         })
     }
 
+    /**
+     * service method that formats the content of a file into object by matching the headers to the content
+     * e.g
+     * {
+     *     ProfileName": "Card Campaign",
+     *     "TransactionDate": "2014-01-12 05:33:22",
+     *     "TransactionAmount": "-32400",
+     * }
+     *
+     * @method formatFileContent
+     * @param {string} content - file content parameter
+     * @param {string} header - header parameter
+     * @return {object} formatted object
+     */
     formatFileContent(content, header) {
         const contentList = content.replace('\r', '').split(',')
         const headerList = header.replace('\r', '').split(',')
@@ -28,6 +49,14 @@ class FileService {
         }, {});
     }
 
+    /**
+     * service method that compares the two files and generates their reports
+     *
+     * @method generateMatchingReport
+     * @param {array} reportFileList - base file to compare
+     * @param {array} comparisonFileList - file to compare with the base file
+     * @return {object} report object
+     */
     generateMatchingReport(reportFileList, comparisonFileList) {
         if(!Array.isArray(reportFileList) || !Array.isArray(comparisonFileList)) {
             throw new Error('Both arguments must be arrays');
@@ -66,6 +95,14 @@ class FileService {
         }
     }
 
+    /**
+     * service method that gets the matching reports
+     *
+     * @method getFilesMatchingReports
+     * @param {string} file1Path - base file to compare
+     * @param {string} file2Path - file to compare with the base file
+     * @return {object} matching reports object
+     */
     async getFilesMatchingReports(file1Path, file2Path) {
         const file1 = await this.readFile(file1Path);
         const file2 = await this.readFile(file2Path);
@@ -84,6 +121,14 @@ class FileService {
         }
     }
 
+    /**
+     * service method that removes uploaded files
+     *
+     * @method removeFiles
+     * @param {string} file1Path - base file to compare
+     * @param {string} file2Path - file to compare with the base file
+     * @return {void}
+     */
     removeFiles(file1Path, file2Path) {
         if(file1Path) {
             fs.unlink(file1Path, err => {

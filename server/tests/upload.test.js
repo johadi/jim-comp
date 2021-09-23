@@ -50,7 +50,7 @@ describe('Upload API [/api/upload]', () => {
                 });
         });
 
-    it('Should return the files reports object when both inputs are valid',
+    it('Should return the files reports object successfully when both inputs are valid',
         (done) => {
             const file1 = path.join(__dirname, './mock-files/tutukamark.csv');
             const file2 = path.join(__dirname, './mock-files/clientmark.csv');
